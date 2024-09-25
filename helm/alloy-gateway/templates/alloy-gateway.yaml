@@ -1,3 +1,4 @@
+{{- if .Values.alloy.enabled }}
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
 metadata:
@@ -10,7 +11,7 @@ spec:
   catalog: giantswarm
   config:
     configMap:
-      name: observability-config
+      name: observability-gateway-config
       namespace: giantswarm
     secret:
       name: ""
@@ -22,8 +23,9 @@ spec:
     secret:
       name: ""
       namespace: ""
-  name: observability-gateway
+  name: alloy
   namespace: monitoring
   # used by renovate
   # repo: giantswarm/alloy
   version: 0.5.2
+{{- end -}}

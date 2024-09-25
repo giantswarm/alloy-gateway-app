@@ -1,12 +1,19 @@
+{{- if .Values.alloy.enabled }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  labels:
+    {{- include "labels.common" . | nindent 4 }}
   name: observability-gateway-config
   namespace: giantswarm
 data:
   values: |
+    {{- with .Values.alloy }}
     alloy:
-      {{- .Values.alloy | nindent 6 }}
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+    {{- with .Values.networkPolicy }}
     networkPolicy:
-      {{- .Values.networkPolicy | nindent 6 }}
-
+      {{- toYaml . | nindent 6 }}
+    {{ end }}
+{{- end -}}
