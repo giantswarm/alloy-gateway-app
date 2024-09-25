@@ -1,4 +1,4 @@
 replace-chart-version-with-git: true
 generate-metadata: true
-chart-dir: ./helm/alloy-gateway-app
+chart-dir: ./helm/alloy-gateway
 destination: ./build

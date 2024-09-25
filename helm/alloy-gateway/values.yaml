@@ -1,0 +1,6 @@
+## Alloy gateway configuration
+## We need to put the whole configuration in a single string.
+## This will allow us to replace this alloy gateway app with the use of the alloy-app.
+## This is waiting for https://github.com/giantswarm/roadmap/issues/3682 to be fixed
+alloy: ""
+networkPolicy: ""

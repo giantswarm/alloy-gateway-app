@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: observability-gateway-config
+  namespace: giantswarm
+data:
+  values: |
+    alloy:
+      {{- .Values.alloy | nindent 6 }}
+    networkPolicy:
+      {{- .Values.networkPolicy | nindent 6 }}
+
