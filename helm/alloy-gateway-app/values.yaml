@@ -1,0 +1,12 @@
+name: alloy-gateway-app
+serviceType: managed
+
+project:
+  branch: "[[ .Branch ]]"
+  commit: "[[ .SHA ]]"
+
+image:
+  registry: quay.io
+  name: giantswarm/alloy-gateway-app
+  tag: v0.0.1
+  pullPolicy: IfNotPresent
