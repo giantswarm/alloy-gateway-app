@@ -7,6 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- changed: `app.giantswarm.io` label group was changed to `application.giantswarm.io`
+- create initial app version.
 
 [Unreleased]: https://github.com/giantswarm/alloy-gateway-app/tree/main

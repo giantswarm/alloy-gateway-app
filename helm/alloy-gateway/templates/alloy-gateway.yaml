@@ -1,0 +1,31 @@
+{{- if .Values.alloy.enabled }}
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  labels:
+    app-operator.giantswarm.io/version: 0.0.0
+    {{- include "labels.common" . | nindent 4 }}
+  name: observability-gateway
+  namespace: giantswarm
+spec:
+  catalog: giantswarm
+  config:
+    configMap:
+      name: observability-gateway-config
+      namespace: giantswarm
+    secret:
+      name: ""
+      namespace: ""
+  kubeConfig:
+    context:
+      name: ""
+    inCluster: true
+    secret:
+      name: ""
+      namespace: ""
+  name: alloy
+  namespace: monitoring
+  # used by renovate
+  # repo: giantswarm/alloy
+  version: 0.5.2
+{{- end -}}
