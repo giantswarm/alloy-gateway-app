@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update alloy-app to 0.8.0
+  - Bumps alloy to 1.6.1
+
 ## [0.2.0] - 2024-11-18
 
 ### Changed
