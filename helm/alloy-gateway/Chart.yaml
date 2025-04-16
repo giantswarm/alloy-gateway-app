@@ -1,11 +1,11 @@
 apiVersion: v2
 appVersion: 0.0.1
 name: alloy-gateway
-description: App used to deploy the Alloy in Gateway mode.
+description: App used to deploy Alloy in gateway mode.
 home: https://github.com/giantswarm/alloy-gateway-app
 icon: https://s.giantswarm.io/app-icons/grafana-alloy/1/light.png
 sources:
-  - https://github.com/giantswarm/alloy-app
+  - https://github.com/giantswarm/alloy-gateway-app
 version: 0.3.0
 annotations:
   application.giantswarm.io/team: atlas
