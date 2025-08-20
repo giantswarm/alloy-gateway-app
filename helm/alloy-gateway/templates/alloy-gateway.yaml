@@ -8,7 +8,7 @@ metadata:
   name: observability-gateway
   namespace: giantswarm
 spec:
-  catalog: giantswarm
+  catalog: default
   config:
     configMap:
       name: observability-gateway-config
