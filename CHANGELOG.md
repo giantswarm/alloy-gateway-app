@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update chart metadata
+- Update alloy-app to 0.12.1
+  - Bumps alloy to 1.10.1
 
 ## [0.3.0] - 2025-02-25
 
