@@ -1,20 +1,50 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/giantswarm/alloy-gateway-app/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/giantswarm/alloy-gateway-app/tree/main)
 
-[Read me after cloning this template (GS staff only)](https://handbook.giantswarm.io/docs/dev-and-releng/app-developer-processes/adding_app_to_appcatalog/)
+# alloy-gateway-app
 
-# alloy-gateway-app chart
+## Purpose
 
-Giant Swarm offers a alloy-gateway-app App which can be installed in workload clusters.
-Here we define the alloy-gateway-app chart with its templates and default configuration.
+The **alloy-gateway-app** enables Giant Swarm customers to send observability data from external sources into the platform's centralized observability platform. This app is specifically designed for data ingestion from sources **outside** of Giant Swarm managed Kubernetes clusters.
 
-**What is this app?**
+## Place in Observability Platform
 
-This App is a work around used to deploy alloy as a gateway on management clusters until our CI tooling supports deploying an application with a custom name as this is mostly installing the alloy app with the name alloy-gateway.
+The **alloy-gateway-app** is a core component of Giant Swarm's Observability Platform API ecosystem, working in tandem with the [observability-platform-api](https://github.com/giantswarm/observability-platform-api) to provide secure external data ingestion capabilities.
 
-**Why did we add it?**
+**Complete Platform Components:**
 
-Check out this to know more https://github.com/giantswarm/roadmap/issues/3568
+- **alloy-gateway-app** (this repo) → Data processing and forwarding
+- [**observability-platform-api**](https://github.com/giantswarm/observability-platform-api) → External access control and routing
+- **Loki, Mimir, Tempo** → Storage backends for logs, metrics, and traces
 
-**Who can use it?**
+All configuration is managed centrally through [shared-configs](https://github.com/giantswarm/shared-configs) templates, ensuring consistent deployment across all Giant Swarm installations.
 
-This application is not meant to be deployed on workload clusters.
+## Technical Implementation
+
+This repository contains the Helm chart and configuration templates for deploying Grafana Alloy in gateway mode to accept external observability data securely.
+
+## Configuration & Deployment
+
+**All configuration is managed through [shared-configs](https://github.com/giantswarm/shared-configs)** - this repository provides the base templates that are populated by the shared-configs system during deployment.
+
+- **Target Environment**: Management clusters only (not workload clusters)
+- **Deployment Method**: Automatically via Giant Swarm platform management
+- **Configuration Source**: Templates in this repo + values from shared-configs
+
+## Documentation & Resources
+
+### User Documentation
+
+- [**Data Import/Export Guide**](https://docs.giantswarm.io/overview/observability/data-management/data-import-export/) - Public API documentation and usage examples
+- [**Intranet Documentation**](https://intranet.giantswarm.io/docs/observability/gateway/) - Internal operational guides
+
+### Related Repositories
+
+- [**observability-platform-api**](https://github.com/giantswarm/observability-platform-api) - Ingress management and external access control
+- [**shared-configs**](https://github.com/giantswarm/shared-configs) - Central configuration management system
+- [**alloy-app**](https://github.com/giantswarm/alloy-app) - Base Grafana Alloy Helm chart
+
+### Project Information
+
+- [**Implementation Roadmap**](https://github.com/giantswarm/roadmap/issues/3568) - Original project scope and requirements
+- **Team**: Atlas (@giantswarm/team-atlas)
+- **Status**: Production deployment on management clusters
